@@ -1,0 +1,2 @@
+class DailySnapsController < ApplicationController
+end
