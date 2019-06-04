@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :workout_logs
+  resources :user_workouts
   resources :workouts
   resources :meals
   resources :daily_snaps
   resources :user_settings
   resources :relationships
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post '/login', to: 'sessions#create', as: 'login'
 end
