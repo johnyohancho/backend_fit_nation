@@ -1,2 +1,2 @@
-class WorkoutLogsController < ApplicationController
+class UserWorkoutsController < ApplicationController
 end
