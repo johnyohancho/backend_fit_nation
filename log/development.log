@@ -3747,3 +3747,46 @@ Unpermitted parameters: :id, :workout
 Completed 201 Created in 141ms (Views: 2.5ms | ActiveRecord: 71.5ms)
 
 
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1229228560157968020)[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (170.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddSetsToUserWorkouts (20190605223409)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (40.1ms)[0m  [1m[35mALTER TABLE "user_workouts" ADD "sets" integer[0m
+  ↳ db/migrate/20190605223409_add_sets_to_user_workouts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (127.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190605223409"]]
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddRepsToUserWorkouts (20190605223426)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (83.5ms)[0m  [1m[35mALTER TABLE "user_workouts" ADD "reps" integer[0m
+  ↳ db/migrate/20190605223426_add_reps_to_user_workouts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190605223426"]]
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveSetsRepsFromWorkouts (20190605223453)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (174.3ms)[0m  [1m[35mALTER TABLE "workouts" DROP COLUMN "sets"[0m
+  ↳ db/migrate/20190605223453_remove_sets_reps_from_workouts.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "workouts" DROP COLUMN "reps"[0m
+  ↳ db/migrate/20190605223453_remove_sets_reps_from_workouts.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190605223453"]]
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (43.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1229228560157968020)[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/johnyohancho/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273

@@ -32,6 +32,10 @@ class UsersController < ApplicationController
         @user.destroy
     end
 
+    def user_workouts
+        
+    end
+
     private
 
     def user_params
