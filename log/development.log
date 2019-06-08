@@ -4261,3 +4261,19 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 294ms (Views: 0.5ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/login" for ::1 at 2019-06-07 18:45:27 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"johncho", "password"=>"[FILTERED]", "errors"=>[], "session"=>{"username"=>"johncho", "password"=>"[FILTERED]", "errors"=>[]}}
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "johncho"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 200 OK in 398ms (Views: 2.5ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/login" for ::1 at 2019-06-07 19:01:23 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"johncho", "password"=>"[FILTERED]", "errors"=>[], "session"=>{"username"=>"johncho", "password"=>"[FILTERED]", "errors"=>[]}}
+  [1m[36mUser Load (55.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "johncho"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 200 OK in 467ms (Views: 2.3ms | ActiveRecord: 55.7ms)
+
+
