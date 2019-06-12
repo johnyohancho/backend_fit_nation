@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        render json: @user, status: :ok
+        render json: @user, include: [:meals], status: :ok
     end
 
     def create
@@ -32,9 +32,6 @@ class UsersController < ApplicationController
         @user.destroy
     end
 
-    def user_workouts
-        
-    end
 
     private
 
