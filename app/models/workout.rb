@@ -1,4 +1,4 @@
 class Workout < ApplicationRecord
-    has_many :workout_logs
-    has_many :users, through: :workout_logs
+    has_many :user_workouts
+    has_many :users, through: :user_workouts
 end
