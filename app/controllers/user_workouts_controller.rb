@@ -5,7 +5,7 @@ class UserWorkoutsController < ApplicationController
     end
 
     def create
-        @user_workout = UserWorkout.new(user_setting_params)
+        @user_workout = UserWorkout.new(user_workout_params)
         if @user_workout.save!
             render json: @user_workout, status: :created
         else
@@ -15,7 +15,7 @@ class UserWorkoutsController < ApplicationController
 
     def update
         @user_workout = UserWorkout.find(params[:id])
-        if @user_workout.update(user_setting_params)
+        if @user_workout.update(user_workout_params)
             render json: @user_workout, status: :created
         else
             render json: { errors: @user_workout.errors.full_messages }, status: :unprocessable_entity
@@ -33,6 +33,7 @@ class UserWorkoutsController < ApplicationController
         params.permit(
             :user_id,
             :workout_id,
+            :workout_type,
             :date,
             :sets,
             :reps
