@@ -36,7 +36,9 @@ class UserWorkoutsController < ApplicationController
             :workout_type,
             :date,
             :sets,
-            :reps
+            :reps,
+            :name,
+            :weight
         )
     end
 end
