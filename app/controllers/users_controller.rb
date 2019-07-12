@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        render json: @user, except: [:password_digest], include: [:meals, :user_setting, :daily_snaps, :user_workouts=> {include: :workout} ], status: :ok
+        render json: @user, except: [:password_digest], include: [:meals, :daily_snaps, :user_workouts=> {include: :workout} ], status: :ok
     end
 
     def create
@@ -36,6 +36,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:username, :password, :email, :name, :description, :gender, :age, :years_exp)
+        params.permit(:username, :password, :email, :name, :description, :gender, :age, :years_exp, :set_calories, :set_protein, :set_carbs, :set_fat)
     end
 end

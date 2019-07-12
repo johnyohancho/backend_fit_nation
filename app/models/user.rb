@@ -23,8 +23,9 @@ class User < ApplicationRecord
     has_many  :following, through: :active_relationships, source: :followed
     has_many  :followers, through: :passive_relationships, source: :follower
 
+
     validates :username, presence: true
-    validates :password, presence: true
+    # validates :password, presence: true
     validates :name, presence: true
     validates :email, presence: true
 

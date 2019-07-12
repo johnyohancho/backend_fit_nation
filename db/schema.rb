@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_20_183456) do
+ActiveRecord::Schema.define(version: 2019_07_12_065343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,21 +59,6 @@ ActiveRecord::Schema.define(version: 2019_06_20_183456) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "user_settings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "set_calories"
-    t.integer "set_steps"
-    t.decimal "set_protein_percent"
-    t.decimal "set_carb_percent"
-    t.decimal "set_fat_percent"
-    t.integer "set_protein_amount"
-    t.integer "set_carb_amount"
-    t.integer "set_fat_amount"
-    t.integer "set_sugar_amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "user_workouts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workout_id"
@@ -98,6 +83,10 @@ ActiveRecord::Schema.define(version: 2019_06_20_183456) do
     t.integer "years_exp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "set_calories"
+    t.integer "set_protein"
+    t.integer "set_carbs"
+    t.integer "set_fat"
   end
 
   create_table "workouts", force: :cascade do |t|
